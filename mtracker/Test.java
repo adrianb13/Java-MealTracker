@@ -75,5 +75,14 @@ class Test {
     //Shows User's List of Meals
     System.out.printf("%s's ", user.getFirstName());
     meals.viewMeals();
+    System.out.println();
+
+    //Shows User's Adherence to their goal
+    System.out.printf("This is your 'complete meal' percentage: %s%% \n", meals.getAdherence());
+    if(meals.isOnTrack()){
+      System.out.println("You are ON TRACK with your goal.");
+    } else {
+      System.out.println("You are NOT ON TRACK with your goal.");
+    }
   }  
 }

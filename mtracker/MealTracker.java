@@ -24,4 +24,24 @@ public class MealTracker {
       System.out.println(meal.getName());
     }
   }
+
+  int getMealCount(){
+    return this.mMeals.size();
+  }
+
+  double getAdherence(){
+    int count = 0;
+
+    for (Meal meal : this.mMeals){
+      if (meal.isComplete()){
+        count += 1;
+      }
+    }
+
+    return count / this.mMeals.size() * 100;
+  }
+
+  boolean isOnTrack() {
+    return this.getAdherence() >= this.mUser.getTarget();
+  }
 }
