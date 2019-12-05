@@ -23,6 +23,7 @@ public class MealTracker {
     for (Meal meal : this.mMeals) {
       System.out.println(meal.getName());
     }
+    System.out.println();
   }
 
   int getMealCount(){

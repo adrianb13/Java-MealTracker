@@ -1,2 +1,2 @@
 # Run Test.java.
-java -cp ../ mtracker.Test
+java -cp ../ mtracker.Main

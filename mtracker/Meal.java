@@ -22,7 +22,7 @@ public class Meal {
     for(Food food : this.mFoods){
       calories += food.getCalories();
     }
-    calories = Food.round(calories, 1);
+    //calories = Food.round(calories, 1);
     return calories;
   }
 
@@ -32,7 +32,7 @@ public class Meal {
     for(Food food : this.mFoods){
       fat += food.getFat();
     }
-    fat = Food.round(fat, 1);
+    //fat = Food.round(fat, 1);
     return fat;
   }
 
@@ -42,7 +42,7 @@ public class Meal {
     for(Food food : this.mFoods){
       carbs += food.getCarbohydrates();
     }
-    carbs = Food.round(carbs, 1);
+    //carbs = Food.round(carbs, 1);
     return carbs;
   }
 
@@ -52,7 +52,7 @@ public class Meal {
     for(Food food : this.mFoods){
       protein += food.getProtein();
     }
-    protein = Food.round(protein, 1);
+    //protein = Food.round(protein, 1);
     return protein;
   }
 
@@ -61,12 +61,27 @@ public class Meal {
     for(Food food : this.mFoods){
       System.out.println(food.getName());
     }
+    System.out.println();
   }
 
   void addFood(Food food){
     this.mFoods.add(food);
 
     System.out.println(String.format("%s is added to %s", food.getName(), this.mName));
+  }
+
+  void viewMeal(){
+    System.out.printf("Total calories are %s. \n", getCalories());
+    System.out.printf("Total fat is %s. \n", getFat());
+    System.out.printf("Total carbs are %s. \n", getCarbohydrates());
+    System.out.printf("Total protein is %s. \n", getProtein());
+    if(isComplete()){
+      System.out.println("This was a COMPLETE MEAL!\n");  
+    } else {
+      System.out.printf("This was NOT a complete meal!\n");
+    }
+    
+    System.out.println();  
   }
 
   boolean isComplete() {

@@ -28,7 +28,11 @@ public class Food {
   }
   double calcCalories(double fat, double carbs, double protein){
     double total = (9 * fat) + (4 * carbs) + (4 * protein);
-    return round(total, 1);
+    if(total > 0){
+      return round(total, 1);
+    } else {
+      return 0;
+    }
   }
   double getCalories(){
     return this.mCalories;
